@@ -8,6 +8,52 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Лабораторные работы по проектированию:</h1>
+    <ul id="fileListDesigning"></ul>
+    <script>
+        // Список файлов
+        const filesDesigning = [
+            { name: "Лаба 1", url: "designing/laba1.html" },
+            { name: "Лаба 2", url: "designing/laba2.html" },
+            { name: "Лаба 3", url: "designing/laba3.html" },
+            { name: "Лаба 4", url: "designing/laba4.html" },
+            { name: "Лаба 5", url: "designing/laba5.html" },
+            { name: "Лаба 6", url: "designing/laba6.html" },
+            // Добавьте остальные файлы с их URL
+        ];
 
+        // Создание ссылок на файлы
+        const fileListDesigning = document.getElementById('fileListDesigning');
+        filesDesigning.forEach(file => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            link.href = file.url;
+            link.textContent = file.name;
+            listItem.appendChild(link);
+            fileListDesigning.appendChild(listItem);
+        });
+    </script>
+    <h1>Лабораторные работы по безопасности:</h1>
+    <ul id="fileListSafety"></ul>
+    <script>
+        // Список файлов
+        const filesSafety = [
+            { name: "Лаба 1", url: "safety/laba1.php" },
+            { name: "Лаба 2", url: "safety/laba2.php" },
+            { name: "Лаба 3", url: "safety/laba3.php" },
+            // Добавьте остальные файлы с их URL
+        ];
+
+        // Создание ссылок на файлы
+        const fileListSafety = document.getElementById('fileListSafety');
+        filesSafety.forEach(file => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            link.href = file.url;
+            link.textContent = file.name;
+            listItem.appendChild(link);
+            fileListSafety.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba4</title>
+</head>
+<body>
+<!--Задание на 4 ЛР по проектированию. Создать класс с двумя числовыми полями и -->
+<!--методами для вычисления суммы, разности, произведения и частного. -->
+<!--Создать массив из трех объектов этого класса. Обратиться к методам класса чарез элементы массива.-->
+  <script>
+    class Num{
+      num1;
+      num2;
+      constructor(num1, num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+      }
+      sum(){
+        return this.num1 + this.num2;
+      }
+      difference(){
+        return this.num1 - this.num2;
+      }
+      multiplication(){
+        return this.num1 * this.num2;
+      }
+      division(){
+        return this.num1 / this.num2;
+      }
+    }
+    let nums = [];
+    function AddElement(){
+      let num1 = document.forms["form"].elements["num1"].value;
+      let num2 = document.forms["form"].elements["num2"].value;
+      let num = new Num(num1, num2);
+      nums.push(num);
+    }
+    function ShowInfo(){
+      console.log(nums.length);
+      nums.forEach(item => 
+        document.writeln(`${item.num1} и ${item.num2} <br> Сумма: ${item.sum()} <br> Разность: ${item.difference()} <br> Произведение: ${item.multiplication()} <br> Частное: ${item.division()} <br><br>`)
+      );
+    }
+  </script>
+  <h1>Добавить числа</h1>
+  <form id="form">
+    <input type = "text" placeholder="Введите первое число" id = "num1">
+    <input type = "text" placeholder="Введите второе число" id = "num2">
+    <input type="button" onclick ="AddElement()" value="Добавить">
+  </form>
+  <h1>Посмотреть информацию</h1>
+  <form id="infoForm">
+    <input type="button" onclick ="ShowInfo()" value="Посмотреть информацию">
+  </form>
+</body>
+</html>

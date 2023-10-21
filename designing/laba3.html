@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba3</title>
+</head>
+<body>
+  <script>
+    function ippik(){
+      var srt = document.forms["frm"].elements["N"].value;
+      var regexpv4 = /\b(((\d)|(\d\d)|(1\d\d)|(2[0-4]\d)|(25[0-5]))\.){3}((\d)|(\d\d)|(1\d\d)|(2[0-4]\d)|(25[0-5]))\b/g;
+      var regexpv6 = /\b((\d|[A-F]){4}:){7}((\d|[A-F]){4})\b/g;
+      var matchesV4 = srt.match(regexpv4);
+      var matchesV6 = srt.match(regexpv6);
+      document.write(matchesV4 != null ? "v4: " + matchesV4 : matchesV6 != null ? "v6: " + matchesV6 : "IP фигня")
+    }
+  </script>
+  <form id="frm">
+    <input type = "text" id = "N">
+    <input type="button" onclick ="ippik()" value="Отправить">
+  </form>
+</body>
+</html>

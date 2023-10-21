@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba5</title>
+</head>
+<body>
+  <script>
+    class Animal{
+      food;
+      location;
+      name;
+      constructor(food, location, name){
+        this.food = food;
+        this.location = location;
+        this.name =name;
+  
+      }
+      makeNoise(){
+        document.writeln(`${animalName} говорит`);
+      }
+      eat(){
+        document.writeln(`${animalName} есть`);
+      }
+      sleep(){
+        document.writeln(`${animalName} спит`);
+      }
+  
+    }
+    var Animals = [];
+  
+    class Dog extends Animal{
+      breed;
+  
+      constructor(food, location, name, breed){
+        super(food, location, name)
+        this.breed =breed;
+      }
+    }
+    class Cat extends Animal{
+      age;
+  
+      constructor(food, location, name, age){
+        super(food, location, name)
+        this.breed = age;
+      }
+    }
+    class Horse extends Animal{
+      weigth;
+  
+      constructor(food, location, name, weigth){
+        super(food, location, name)
+        this.breed = weigth;
+      }
+    }
+    class Veterinarian {
+      treatAnimal(animal){ // без констукции(new) короче инициализация короче 
+        
+        document.writeln(`${animal.name} ест ${animal.food}, находится в ${animal.location}`);
+      }
+    }
+    function AddNewAnimal(){
+      let infos = document.forms["info"];
+      switch( infos.elements['list'].value){
+        case "dog":
+          Animals.push(new Dog(infos.elements['food'].value, infos.elements['location'].value, infos.elements['name'].value, infos.elements['iditional'].value));
+        case "cat":
+          Animals.push(new Cat(infos.elements['food'].value, infos.elements['location'].value, infos.elements['name'].value, infos.elements['iditional'].value));
+        case "horse":
+          Animals.push(new Horse(infos.elements['food'].value, infos.elements['location'].value, infos.elements['name'].value, infos.elements['iditional'].value));
+      }
+    }
+    let veterinarian = new Veterinarian();
+    function SeeInfo() {
+      let animalName = document.forms['see'].elements['name'].value;
+      let animal = Animals.find(element => element.name == animalName);
+      veterinarian.treatAnimal(animal);
+    }
+  </script>
+  <form id = "info">
+    <select id = "list">
+      <option value="dog"> Dog </option>
+      <option value="cat"> Cat </option>
+      <option value="horse"> Horse </option>
+    </select>
+    <input id="name" placeholder="Введите имя животного">
+    <input id="food" placeholder="Введите еду, которую употребляет животное">
+    <input id="location" placeholder="Введите место, где живёт живоное">
+    <input id="iditional" placeholder="Введите доп. информацию">
+    <input type = "button" onclick="AddNewAnimal()" value="Отправить">
+  </form>
+  <br>
+  <form id = "see">
+    <input id="name" placeholder="Введите имя животного">
+    <input type = "button" onclick="SeeInfo()" value="Отправить">
+  </form>
+</body>
+</html>

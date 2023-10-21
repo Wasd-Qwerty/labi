@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba2</title>
+</head>
+<body>
+  <script>
+    function arr(){
+      var n = document.forms["frm"].elements["N"].value;
+      let arr1 = n.split(' ');
+      let test = fNum(arr1);
+      console.log(test);
+      document.writeln(test == undefined ?"НЕЙТРАЛЬНОЕ":test > 0? "ПОЛОЖИТЕЛЬНОЕ": "ОТРИЦАТЕЛЬНОЕ");
+    }
+    function fNum(arr){
+      return arr.find(item => item!=0);
+    }
+  </script>
+  <form id="frm">
+    <input type = "text" placeholder="Введите n" id = "N">
+    <input type="button" onclick ="arr()" value="Отправить">
+  </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba6</title>
+</head>
+<body>
+  <script>
+    function CreateObject(prop1, value1, prop2, value2) {
+      return {
+        [prop1]: value1,
+        [prop2]: value2,
+        Print(){
+          return `${prop1}: ${value1}, ${prop2}: ${value2} <br>`;
+        }
+      }
+    }
+    let objName = [["Имя", "Артём" ,"Возраст", 19], ["Марка", "Mitsubishi Galant" ,"Дата выпуска", 1999], ["Название", "Таинственный сад" ,"Дата публикации", "30.11.1806"]];
+    let objects = [[/*people*/],[/*cars*/],[/*books*/]];
+    for(let i = 0; i< objects.length; i++){
+      for(let k = 0; k  < 3; k++) {
+        let what = i === 0 ? "Человек" : i == 1 ? "Машина" : i == 2 ? "Книга" : "";
+        let prop1 = prompt(`${what} Поле 1`);
+        let value1 = prompt(`${what} Значение 1`);
+        let prop2 = prompt(`${what} Поле 2`);
+        let value2 = prompt(`${what} Значение 2`);
+        objects[i].push(new CreateObject(prop1 !== "" ? prop1 : objName[i][0], value1 !== "" ? value1 : objName[i][1], prop2 !== "" ? prop2 : objName[i][2], value2 !== "" ? value2 : objName[i][3]));
+      }
+    }
+    for(let i = 0; i < objects.length; i++){
+      for(let k = 0; k < objects[i].length; k++) {
+        document.writeln(`${objects[i][k].Print()}<br>`);
+      }
+      document.writeln("<br>");
+    }
+  </script>
+</body>
+</html>

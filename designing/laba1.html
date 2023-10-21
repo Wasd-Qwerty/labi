@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba1</title>
+</head>
+<body>
+  <script>
+        function result(){
+        var sum = 0;
+        var N = Number(document.forms["frm"].elements["N"].value);
+        var x = Number(document.forms["frm"].elements["x"].value); 
+        if(Math.abs(x)<Infinity){
+            for(var n = 0; n <= N; n++){
+                let facN = 1;
+                if(n == 0) facN = 1;
+                for(var i = 1; i <= n; i++){
+                    facN *= i;
+                }
+                sum += ((-1)**n*(x**n))/facN;
+            }
+            document.write(sum);
+        } else{
+            document.write("Введённое значение X не соответствует условию ")
+        } }
+    </script>
+        <form id="frm">
+            <input type = "text" placeholder="Введите n" id = "N">
+            <input type = "text" placeholder="Введите x" id = "x">
+            <input type="button" onclick ="result()" value="Отправить">
+        </form>
+</body>
+</html>
