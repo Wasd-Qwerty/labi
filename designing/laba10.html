@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba10</title>
+</head>
+<body>
+<script>
+  // Функция для определения браузера
+  function getBrowser() {
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.indexOf('opera') !== -1 || userAgent.indexOf('opr') !== -1) {
+      return 'opera';
+    } else if (userAgent.indexOf('firefox') !== -1) {
+      return 'firefox';
+    } else if (userAgent.indexOf('chrome') !== -1) {
+      return 'chrome';
+    } else {
+      return 'unknown';
+    }
+  }
+
+  // Функция для выполнения соответствующей линейной функции
+  function executeLinearFunction(x) {
+    var browser = getBrowser();
+    var y;
+
+    switch (browser) {
+      case 'opera':
+        y = 3 * x + 5;
+        break;
+      case 'firefox':
+        y = x + 3;
+        break;
+      case 'chrome':
+        y = x / 3 + x / 5;
+        break;
+      default:
+        y = 0; // По умолчанию, если браузер не определен
+    }
+
+    document.write('Значение y для ' + browser + ': ' + y);
+  }
+
+  // Пример вызова функции с определенным значением x
+  executeLinearFunction(10);
+</script>
+</body>
+</html>

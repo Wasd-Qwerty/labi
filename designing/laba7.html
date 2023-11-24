@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba7</title>
+</head>
+  <script>
+    function ChangeBackground() {
+      var colorb = document.getElementById("changedBackcolor").value;
+      var root = document.documentElement;
+      root.style.backgroundColor = colorb;
+    }
+
+    function ChangeTextColor() {
+      var colort = document.getElementById("changedTextColor").value;
+      var root = document.body;
+      root.style.color = colort;
+    }
+
+    function ChangeLink() {
+      var changel = document.querySelector('a.link');
+      var link = document.getElementById('changedLink').value;
+      changel.setAttribute('href', link);
+    }
+  </script>
+  <style>
+    .class {
+      background-color: white;
+    }
+  </style>
+<body>
+  <input type="text" placeholder="Введите цвет фона" id="changedBackcolor">
+  <input type="button" onClick="ChangeBackground()" value="Ок">
+  <br>
+  <input type="text" placeholder="Введите цвет для текста" id="changedTextColor">
+  <input type="button" onClick="ChangeTextColor()" value="Ок">
+  <br>
+  <input type="text" placeholder="Введите ссылку" id="changedLink">
+  <input type="button" onClick="ChangeLink()" value="Ок">
+  <br>
+  <a href="" class="link">Ссылка</a>
+  <p className="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  
+  </body>
+
+</html>

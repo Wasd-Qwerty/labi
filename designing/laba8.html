@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>laba8</title>
+  <style>
+    /* Стили для обычной версии страницы */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Стили для версии для слабовидящих */
+    body.accessible {
+      font-family: 'OpenDyslexic', sans-serif; /* Пример использования шрифта для слабовидящих */
+      font-size: 1.2em; /* Пример увеличения размера шрифта */
+      line-height: 1.5; /* Пример увеличения межстрочного интервала */
+    }
+  </style>
+</head>
+<body>
+<button onclick="toggleAccessibility()">Версия для слабовидящих</button>
+<header>
+  <h1>Добро пожаловать на мой сайт!</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">О нас</a></li>
+    <li><a href="#">Контакты</a></li>
+  </ul>
+</nav>
+
+<section>
+  <article>
+    <h2>Новости</h2>
+    <p>Здесь будут размещены последние новости и события.</p>
+  </article>
+
+  <article>
+    <h2>Блог</h2>
+    <p>Читайте интересные статьи на нашем блоге.</p>
+  </article>
+</section>
+
+<aside>
+  <h2>Боковая панель</h2>
+  <p>Дополнительная информация здесь.</p>
+</aside>
+
+<footer>
+  <p>&copy; 2023 Мой сайт. Все права защищены.</p>
+</footer>
+
+
+<script>
+  function toggleAccessibility() {
+    document.body.classList.toggle('accessible');
+  }
+</script>
+</body>
+</html>
